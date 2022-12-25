@@ -6,9 +6,9 @@
     "moduleResolution": "Node",
     "strict": true,
     "jsx": "preserve",
-    "resolveJsonModule": true,
+    "resolveJsonModule": true,//可以模块化 引入json文件
     "isolatedModules": true,
-    "esModuleInterop": true,
+    "esModuleInterop": true,//导入cjs文件方便 
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true
