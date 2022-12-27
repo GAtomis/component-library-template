@@ -48,3 +48,76 @@ yarn add -D vitepress
 ```
 pnpm run  docs:dev
 ```
+
+#### 
+
+### Config配置
+[更多内容(官方文档)](https://vitepress.vuejs.org/guide/theme-sidebar)
+
+####  侧边栏
+```
+const sidebar =()=>({
+    '/': [
+        {
+            text: 'Components',
+            items: [
+                // This shows `/guide/index.md` page.
+                { text: 'Button', link: '/components/button/' }, // /guide/index.md
+                { text: 'Input', link: '/components/input/' }, // /guide/one.md
+
+            ]
+        },
+
+    ]
+})
+
+```
+#### 安装代码收起展示功能
+```
+pnpm  i -D  vitepress-theme-demoblock
+
+```
+#### 从md中配置插件
+```
+// /docs/.vitepress/config.ts
+import { demoBlockPlugin } from 'vitepress-theme-demoblock'
+export default {
+    themeConfig: {
+        sidebar:sidebar()
+    },
+    markdown:{
+        config:(md)=>{
+    
+            md.use(demoBlockPlugin)
+        }
+
+    }
+}
+```
+#### 将收齐组件加入到vitepress中
+```
+// /docs/.vitepress/theme/index.ts
+
+
+import DefaultTheme from 'vitepress/theme'
+import Button from '../../../dev-ui/button/button'
+import Demo from 'vitepress-theme-demoblock/dist/client/components/Demo.vue'
+import DemoBlock from 'vitepress-theme-demoblock/dist/client/components/DemoBlock.vue'
+import 'vitepress-theme-demoblock/dist/theme/styles/index.css'
+
+
+export default {
+    ...DefaultTheme,
+    enhanceApp(ctx){
+        const {app}=ctx
+        app.component("d-button",Button)
+        DefaultTheme.enhanceApp(ctx)
+        app.component("Demo",Demo)
+        app.component("DemoBlock",DemoBlock)
+    }
+
+ 
+}
+
+```
+#### 在文档中使用

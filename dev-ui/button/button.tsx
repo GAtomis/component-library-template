@@ -1,0 +1,1 @@
+export default ()=><button>1232</button>
