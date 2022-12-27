@@ -121,3 +121,15 @@ export default {
 
 ```
 #### 在文档中使用
+```
+:::demo 
+```vue  
+<template>
+    <div>12323</div>
+    <d-button></d-button>
+</template>
+```
+:::
+```
+
+
