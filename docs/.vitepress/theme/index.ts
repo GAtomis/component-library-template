@@ -12,7 +12,7 @@ export default {
         app.component("d-button",Button)
         DefaultTheme.enhanceApp(ctx)
         app.component("Demo",Demo)
-        app.component("DemoBlock",DemoBlock)
+        app.component("DemoBlock",DemoBlock) 
     }
 
  

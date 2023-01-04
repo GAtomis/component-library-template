@@ -1,0 +1,21 @@
+{
+  "name": "dev-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev":"esbuild --bundle ./src/index.js --format=cjs --platform=node --outdir=./lib --watch",
+    "build":"esbuild --bundle ./src/index.js --format=cjs --platform=node --outdir=./lib",
+    "cli":"node ./lib/index.js create"
+  },
+  "keywords": [],
+  "author": "", 
+  "license": "ISC",
+  "devDependencies": {
+    "commander": "^9.4.1",
+    "esbuild": "^0.16.12",
+    "fs-extra": "^11.1.0",
+    "inquirer": "^9.1.4",
+    "kolorist": "^1.6.0"
+  }
+}

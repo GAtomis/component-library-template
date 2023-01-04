@@ -133,3 +133,17 @@ export default {
 ```
 
 
+### CIL的创建
+
+#### 初始化cli
+* commander 创建命令
+* inquirer 脚本问答交互
+* fs-extra 文件系统操作的封装
+* kolorist 提示文字颜色变换
+
+```  
+ pnpm i -D commander inquirer fs-extra kolorist
+```
+
+npx的意义
+npm2.0后携带的工具，执行node_modules下的命令
