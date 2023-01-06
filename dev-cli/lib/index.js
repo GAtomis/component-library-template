@@ -37709,7 +37709,7 @@ function createComponent(info) {
 
 // src/index.js
 var program2 = new Command();
-program2.command("create").description("some msg").option("-t --type <type>", "\u7C7B\u578B\u4FE1\u606F").action(onCreate);
+program2.command("create").description("\u521B\u5EFA\u4E00\u4E2A\u7EC4\u4EF6\u6A21\u677F\u6216\u914D\u7F6E\u6587\u4EF6").option("-t --type <type>", `\u521B\u5EFA\u7C7B\u578B\uFF0C\u53EF\u9009\u503C\uFF1Acomponent, lib-entry`).action(onCreate);
 program2.parse();
 /*! Bundled license information:
 
