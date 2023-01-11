@@ -1,12 +1,11 @@
 import path from 'path'
 import fs from 'fs'
-import { defineConfig, build} from 'vite'
+import { defineConfig, build } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { fileURLToPath } from 'url'
-
+import { createPackageJson, buildSingle } from './demand-loading.js'
 const __filenameNew = fileURLToPath(import.meta.url)
-
 const __dirnameNew = path.dirname(__filenameNew)
 const entryDir = path.resolve(__dirnameNew, '../../../dev-ui')
 const outputDir = path.resolve(__dirnameNew, '../../../build')
@@ -44,7 +43,19 @@ const buildAll = async () => {
     }))
 }
 
-const buildLib=async ()=> {
+const buildLib = async () => {
+    //全局打包
     await buildAll()
+    //按需加载打包
+    const components = fs.readdirSync(entryDir).filter(name => {
+        const componentDir = path.resolve(entryDir, name)
+        const isDir = fs.lstatSync(componentDir).isDirectory()
+        return isDir && fs.readdirSync(componentDir).includes('index.ts')
+    })
+
+    for (const name of components) {
+        await buildSingle(name)
+        createPackageJson(name)
+    }
 }
 buildLib()

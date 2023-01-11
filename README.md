@@ -128,8 +128,11 @@ export default {
     <div>12323</div>
     <d-button></d-button>
 </template>
-```
+/```
 :::
+
+
+
 ```
 
 
@@ -141,10 +144,23 @@ export default {
 * fs-extra 文件系统操作的封装
 * kolorist 提示文字颜色变换
 
+
 ```  
  pnpm i -D commander inquirer fs-extra kolorist
+
 ```
 
 npx的意义
 npm2.0后携带的工具，执行node_modules下的命令
+
+
+
+### 打包配置
+
+> 文件目录 dev-cli/src/commands/build.js
+拓展
+
+> 按需打包 dev-cli/src/commands/demand-loading.js
+
+
 
