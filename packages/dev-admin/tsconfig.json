@@ -13,6 +13,6 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","dev-ui/**/*.ts", "dev-ui/**/*.d.ts", "dev-ui/**/*.tsx", "dev-ui/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","dev-ui/**/*.ts", "dev-ui/**/*.d.ts", "dev-ui/**/*.tsx", "dev-ui/**/*.vue"]
+
 }

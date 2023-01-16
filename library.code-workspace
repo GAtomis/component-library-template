@@ -1,0 +1,9 @@
+
+
+{
+    "folders": [
+      { "name": "root", "path": "." },
+      { "name": "@library/dev-env", "path": "./packages/dev-env" },
+      { "name": "@library/dev-admin", "path": "./packages/dev-admin" }
+    ]
+}
