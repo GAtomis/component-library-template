@@ -15,9 +15,9 @@
     "test": "jest --config jest.config.js",
     "build:components": "node ./dev-cli/src/commands/build.js",
     "build:lib": "yarn build:components && cp package.json build && cp README.md build",
-    "cli:dev": "esbuild --bundle ./dev-cli/src/index.js --format=cjs --platform=node --outdir=./lib --watch",
-    "cli:build": "esbuild --bundle ./dev-cli/src/index.js --format=cjs --platform=node --outdir=./lib",
-    "cli": "node ./lib/index.js create"
+    "cli:dev": "esbuild --bundle ./dev-cli/src/index.js --format=cjs --platform=node --outfile=./lib/index.cjs --watch",
+    "cli:build": "esbuild --bundle ./dev-cli/src/index.js --format=cjs --platform=node --outfile=./lib/index.cjs",
+    "cli": "node ./lib/index.cjs create"
   },
   "dependencies": {
     "component-library-template": "link:",
