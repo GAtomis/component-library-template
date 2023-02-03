@@ -12,7 +12,6 @@ export async function onCreate(cm = {}) {
    let { type } = cm
    if (!type) {
       const result = await inquirer.prompt([
-
          {
             //用于获取后的属性名
             name: 'type',
@@ -24,8 +23,6 @@ export async function onCreate(cm = {}) {
             choices: CREATE_TYPES,
             //默认值,这里是索引下标
             default: 0
-
-
          }
       ])
       type = result.type

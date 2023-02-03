@@ -1,3 +1,10 @@
+<!--
+ * @Author: GAtomis 850680822@qq.com
+ * @Date: 2023-01-16 23:00:02
+ * @LastEditors: GAtomis
+ * @LastEditTime: 2023-02-03 13:45:56
+ * @Description: 头部注释
+-->
 <script setup lang="ts">
 
 import {ref} from 'vue'
@@ -65,6 +72,9 @@ const data = ref([
 
 
     ]);
+
+    console.log(data);
+    
 </script>
 
 <template>
